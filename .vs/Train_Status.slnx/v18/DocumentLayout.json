@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\SanjaySuresh\\OneDrive - IBM\\Desktop\\.NET_Project\\Train_Status\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CB418BB-350F-A23C-DA4B-8388F950BEE9}|Train_Status_API\\Train_Status_API.csproj|c:\\users\\sanjaysuresh\\onedrive - ibm\\desktop\\.net_project\\train_status\\train_status_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CB418BB-350F-A23C-DA4B-8388F950BEE9}|Train_Status_API\\Train_Status_API.csproj|solutionrelative:train_status_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\SanjaySuresh\\OneDrive - IBM\\Desktop\\.NET_Project\\Train_Status\\Train_Status_API\\appsettings.json",
+              "RelativeDocumentMoniker": "Train_Status_API\\appsettings.json",
+              "ToolTip": "C:\\Users\\SanjaySuresh\\OneDrive - IBM\\Desktop\\.NET_Project\\Train_Status\\Train_Status_API\\appsettings.json",
+              "RelativeToolTip": "Train_Status_API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-11T10:20:43.437Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
