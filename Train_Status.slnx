@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Train_Status_API/Train_Status_API.csproj" />
+  <Project Path="Train_Status_UI/train_status_ui.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

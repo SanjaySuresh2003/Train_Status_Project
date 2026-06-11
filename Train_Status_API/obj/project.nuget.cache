@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zSF3AmyVWEE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SanjaySuresh\\OneDrive - IBM\\Desktop\\.NET_Project\\Train_Status\\Train_Status_API\\Train_Status_API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SanjaySuresh\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\SanjaySuresh\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
