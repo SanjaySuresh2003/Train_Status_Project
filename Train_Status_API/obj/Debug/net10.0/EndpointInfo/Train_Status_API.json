@@ -1,0 +1,491 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Train_Status_API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Bookings/{pnr}": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "parameters": [
+          {
+            "name": "pnr",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingDetailsDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingDetailsDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingDetailsDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test-db": {
+      "get": {
+        "tags": [
+          "Train_Status_API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Trains/by-number/{trainNumber}": {
+      "get": {
+        "tags": [
+          "Trains"
+        ],
+        "parameters": [
+          {
+            "name": "trainNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainSearchDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainSearchDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainSearchDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Trains/by-name/{trainName}": {
+      "get": {
+        "tags": [
+          "Trains"
+        ],
+        "parameters": [
+          {
+            "name": "trainName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrainSearchDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrainSearchDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrainSearchDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Trains/search": {
+      "get": {
+        "tags": [
+          "Trains"
+        ],
+        "parameters": [
+          {
+            "name": "fromCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RouteSearchResultDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RouteSearchResultDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RouteSearchResultDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BookingDetailsDto": {
+        "type": "object",
+        "properties": {
+          "pnr": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainName": {
+            "type": "string",
+            "nullable": true
+          },
+          "journeyDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "sourceStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "classCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "className": {
+            "type": "string",
+            "nullable": true
+          },
+          "bookingStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "bookingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "passengers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PassengerDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PassengerDto": {
+        "type": "object",
+        "properties": {
+          "passengerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "seatNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "coachNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RouteSearchResultDto": {
+        "type": "object",
+        "properties": {
+          "trainId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trainNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainName": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fromStationCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fromStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "departureTime": {
+            "type": "string",
+            "format": "time",
+            "nullable": true
+          },
+          "fromDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "toStationCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "toStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "arrivalTime": {
+            "type": "string",
+            "format": "time",
+            "nullable": true
+          },
+          "toDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "distanceKm": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TrainSearchDto": {
+        "type": "object",
+        "properties": {
+          "trainId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trainNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainName": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainType": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceStationCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationStationCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationStationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "runsMon": {
+            "type": "boolean"
+          },
+          "runsTue": {
+            "type": "boolean"
+          },
+          "runsWed": {
+            "type": "boolean"
+          },
+          "runsThu": {
+            "type": "boolean"
+          },
+          "runsFri": {
+            "type": "boolean"
+          },
+          "runsSat": {
+            "type": "boolean"
+          },
+          "runsSun": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Bookings"
+    },
+    {
+      "name": "Train_Status_API"
+    },
+    {
+      "name": "Trains"
+    },
+    {
+      "name": "WeatherForecast"
+    }
+  ]
+}
